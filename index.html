@@ -3,18 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <title>StockIA Chatbot</title>
-    <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
+    <script>
+      function waitForBotpress() {
+        if (window.botpressWebChat) {
+          window.botpressWebChat.init({
+            configUrl: "https://files.bpcontent.cloud/2025/05/09/00/20250509003825-1IT51LYS.js"
+          });
+        } else {
+          setTimeout(waitForBotpress, 100); // vuelve a intentar en 100ms
+        }
+      }
+    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js" onload="waitForBotpress()"></script>
   </head>
   <body>
     <p style="font-family: sans-serif;">Cargando StockIA Chatbot...</p>
-
-    <script>
-      window.onload = function () {
-        window.botpressWebChat.init({
-          // Este configUrl es el script que carga tu bot específico:
-          configUrl: "https://files.bpcontent.cloud/2025/05/09/00/20250509003825-1IT51LYS.js"
-        });
-      };
-    </script>
   </body>
 </html>
