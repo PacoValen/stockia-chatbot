@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StockIA Chatbot</title>
 
+    <!-- 🟢 1. Definir configuración ANTES de cargar inject.js -->
     <script>
       window.botpressWebChat = {
         config: {
@@ -14,8 +15,10 @@
       };
     </script>
 
+    <!-- 🟢 2. Cargar el script del widget -->
     <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
 
+    <!-- 🟢 3. Cargar tu archivo de configuración (init) -->
     <script>
       window.onload = function () {
         const script = document.createElement('script');
